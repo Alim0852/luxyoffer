@@ -32,7 +32,7 @@ export default function ReviewSlider() {
   ];
 
   return (
-    <div className="sliderWrapper absolute left-0 w-full py-10 bg-[#f5f5f5] mt-20">
+    <div className="sliderWrapper w-full py-10 bg-[#f5f5f5] mt-20">
       <div className="flex justify-between mb-5 items-center mx-auto max-w-7xl">
         <h4 className="text-2xl font-medium">What our Customer say's</h4>
         <div className="buttonWrap flex gap-3">

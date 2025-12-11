@@ -1,5 +1,6 @@
 import { Jost } from "next/font/google";
 import Header from "@/components/global/Header";
+import Footer from "@/components/global/Footer";
 import "./globals.css";
 
 const jost = Jost({
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
         <div className="root pt-28">
           {children}
         </div>
+        <Footer />
       </body>
     </html>
   );

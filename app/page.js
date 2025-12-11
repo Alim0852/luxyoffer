@@ -1,4 +1,6 @@
 import ReviewSlider from "@/components/global/ReviewSlider";
+import InstagramStories from "@/components/global/InstagramStories";
+import Features from "@/components/global/Features";
 import CategoriesSlider from "@/components/products/CategoriesSlider";
 import Products from "@/components/products/Products";
 import Link from "next/link";
@@ -28,6 +30,9 @@ export default function Home() {
       <Products max="8" />
 
       <ReviewSlider />
+
+      <InstagramStories />
+      <Features />
     </div>
   )
 }
