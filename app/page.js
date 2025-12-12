@@ -5,25 +5,25 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="wrapper mx-auto max-w-7xl items-center justify-between px-4">
+    <div className="wrapper mx-auto max-w-7xl items-center justify-between px-3 sm:px-4">
       <CategoriesSlider />
 
-      <div className="heading text-3xl font-medium text-center mt-14 flex justify-between items-center">
+      <div className="heading text-2xl sm:text-3xl font-medium text-center mt-10 sm:mt-14 flex justify-between items-center gap-3">
         Our Bestseller
-        <Link href="#" className="!text-lg bg-black rounded-md text-white px-5 py-2 hover:bg-white hover:text-black border transition-all">View More</Link>
+        <Link href="#" className="!text-base sm:!text-lg bg-black rounded-md text-white px-4 sm:px-5 py-1.5 sm:py-2 hover:bg-white hover:text-black border transition-all">View More</Link>
       </div>
       <Products max="8" />
 
 
-      <div className="heading text-3xl font-medium text-center mt-14 flex justify-between items-center">
+      <div className="heading text-2xl sm:text-3xl font-medium text-center mt-10 sm:mt-14 flex justify-between items-center gap-3">
         Mens Products
-        <Link href="#" className="!text-lg bg-black rounded-md text-white px-5 py-2 hover:bg-white hover:text-black border transition-all">View More</Link>
+        <Link href="#" className="!text-base sm:!text-lg bg-black rounded-md text-white px-4 sm:px-5 py-1.5 sm:py-2 hover:bg-white hover:text-black border transition-all">View More</Link>
       </div>
       <Products max="8" />
 
-      <div className="heading text-3xl font-medium text-center mt-14 flex justify-between items-center">
+      <div className="heading text-2xl sm:text-3xl font-medium text-center mt-10 sm:mt-14 flex justify-between items-center gap-3">
         Womens Products
-        <Link href="#" className="!text-lg bg-black rounded-md text-white px-5 py-2 hover:bg-white hover:text-black border transition-all">View More</Link>
+        <Link href="#" className="!text-base sm:!text-lg bg-black rounded-md text-white px-4 sm:px-5 py-1.5 sm:py-2 hover:bg-white hover:text-black border transition-all">View More</Link>
       </div>
       <Products max="8" />
 

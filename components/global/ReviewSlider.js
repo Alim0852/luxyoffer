@@ -32,23 +32,23 @@ export default function ReviewSlider() {
   ];
 
   return (
-    <div className="sliderWrapper absolute left-0 w-full py-10 bg-[#f5f5f5] mt-20">
-      <div className="flex justify-between mb-5 items-center mx-auto max-w-7xl">
-        <h4 className="text-2xl font-medium">What our Customer say's</h4>
-        <div className="buttonWrap flex gap-3">
-          <button onClick={() => sliderRef.current?.slickPrev()} className="group cursor-pointer bg-white p-2 rounded-lg hover:bg-black transition-all">
+    <div className="sliderWrapper w-full py-6 sm:py-10 bg-[#f5f5f5] mt-10 sm:mt-20">
+      <div className="flex justify-between mb-4 sm:mb-5 items-center mx-auto max-w-7xl px-3 sm:px-0">
+        <h4 className="text-xl sm:text-2xl font-medium">What our Customer say's</h4>
+        <div className="buttonWrap flex gap-2 sm:gap-3">
+          <button onClick={() => sliderRef.current?.slickPrev()} className="group cursor-pointer bg-white p-1.5 sm:p-2 rounded-lg hover:bg-black transition-all">
             <ArrowLeftIcon className="size-4 text-black group-hover:text-white" />
           </button>
-          <button onClick={() => sliderRef.current?.slickNext()} className="group cursor-pointer bg-white p-2 rounded-lg hover:bg-black transition-all">
+          <button onClick={() => sliderRef.current?.slickNext()} className="group cursor-pointer bg-white p-1.5 sm:p-2 rounded-lg hover:bg-black transition-all">
             <ArrowRightIcon className="size-4 text-black group-hover:text-white" />
           </button>
         </div>
       </div>
 
-      <Slider ref={sliderRef} {...settings} className="mx-auto max-w-7xl">
+      <Slider ref={sliderRef} {...settings} className="mx-auto max-w-7xl px-3 sm:px-0">
         {Sliders.map((item, index) => (
-          <div key={index} className="p-5 bg-white rounded-xl shadow-md">
-            <div className="flex gap-1 mb-3">
+          <div key={index} className="p-4 sm:p-5 bg-white rounded-xl shadow-md">
+            <div className="flex gap-1 mb-2 sm:mb-3">
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}
@@ -58,14 +58,14 @@ export default function ReviewSlider() {
             </div>
 
             {/* Review */}
-            <p className="text-gray-900 text-lg mb-4 line-clamp-4 min-h-[112px]">{item.review}</p>
+            <p className="text-gray-900 text-base sm:text-lg mb-3 sm:mb-4 line-clamp-4 min-h-[96px] sm:min-h-[112px]">{item.review}</p>
 
             {/* User Info */}
             <div className="flex items-center gap-3">
-              <Image src={item.avatar} width={40} height={40} alt={item.name} className="rounded-full" />
+              <Image src={item.avatar} width={36} height={36} alt={item.name} className="rounded-full" />
               <div>
                 <h5 className="font-medium">{item.name}</h5>
-                <span className="text-md text-gray-500">{item.under_name}</span>
+                <span className="text-sm sm:text-md text-gray-500">{item.under_name}</span>
               </div>
             </div>
           </div>

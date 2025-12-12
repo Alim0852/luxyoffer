@@ -61,17 +61,17 @@ export default function Register() {
     }
 
     return (
-        <div className="w-full flex mt-[-7rem]">
-            <div className="imageWrapper w-1/2">
-                <Image src="/images/register-image.png" width={6000} height={6000} className='h-[100vh] object-cover' alt="login-image" />
+        <div className="w-full flex flex-col lg:flex-row mt-[-4rem] lg:mt-[-7rem]">
+            <div className="imageWrapper hidden lg:block lg:w-1/2">
+                <Image src="/images/register-image.png" width={6000} height={6000} className='h-[50vh] lg:h-[100vh] object-cover' alt="register-image" />
             </div>
-            <div className='contentWrapper flex flex-col justify-center pl-10 w-1/2'>
+            <div className='contentWrapper flex flex-col justify-center px-4 sm:px-6 lg:pl-10 w-full lg:w-1/2'>
                 <h2 className='flex items-center font-semibold text-3xl'>
                     Create New Account
                 </h2>
                 <div className='formWrapper'>
-                    <form className='form w-2/3 flex flex-col gap-5 mt-5' onSubmit={handleRegister}>
-                        <div className='flex gap-5'>
+                    <form className='form w-full sm:w-3/4 lg:w-2/3 max-w-md flex flex-col gap-4 sm:gap-5 mt-5' onSubmit={handleRegister}>
+                        <div className='flex flex-col sm:flex-row gap-4 sm:gap-5'>
                             <div className='w-full fieldGroup flex flex-col'>
                                 <label className='label text-gray-700' htmlFor="first">First Name:</label>
                                 <input type='text' required id='first' value={firstName} onChange={(e) => setFirstName(e.target.value)} placeholder='Please Enter Your First Name' className='border rounded-md outline-0 p-2' />

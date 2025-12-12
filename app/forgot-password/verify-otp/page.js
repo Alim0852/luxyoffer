@@ -96,11 +96,11 @@ export default function VerifyOTP() {
     };
 
     return (
-        <div className="w-full flex mt-[-7rem]">
-            <div className="imageWrapper w-1/2">
-                <Image src="/images/otp-image.png" width={6000} height={6000} className='h-[100vh] object-cover' alt="login-image" />
+        <div className="w-full flex flex-col lg:flex-row mt-[-4rem] lg:mt-[-7rem]">
+            <div className="imageWrapper hidden lg:block lg:w-1/2">
+                <Image src="/images/otp-image.png" width={6000} height={6000} className='h-[50vh] lg:h-[100vh] object-cover' alt="otp-image" />
             </div>
-            <div className='contentWrapper flex flex-col justify-center pl-10 w-1/2'>
+            <div className='contentWrapper flex flex-col justify-center px-4 sm:px-6 lg:pl-10 w-full lg:w-1/2'>
                 <span onClick={goToBack} className='cursor-pointer mb-2 font-medium flex items-center'>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +126,7 @@ export default function VerifyOTP() {
                     Enter OTP
                 </h2>
                 <div className='formWrapper'>
-                    <form className='form w-2/3 flex flex-col gap-5 mt-5' onSubmit={handleSubmit}>
+                    <form className='form w-full sm:w-3/4 lg:w-2/3 max-w-md flex flex-col gap-4 sm:gap-5 mt-5' onSubmit={handleSubmit}>
                         <div className="flex space-x-3.5" onPaste={handlePaste}>
                             {otp.map((digit, i) => (
                                 <input

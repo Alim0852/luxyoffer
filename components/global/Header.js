@@ -126,7 +126,7 @@ export default function Example() {
       }}>
       <nav
         aria-label="Global"
-        className="mx-auto flex max-w-7xl items-center justify-between p-6 px-4"
+        className="mx-auto flex max-w-7xl items-center justify-between p-4 sm:p-6 px-3 sm:px-4"
       >
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
@@ -155,44 +155,49 @@ export default function Example() {
             Home
           </Link>
           <Popover className="relative">
-            <PopoverButton className="cursor-pointer flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900">
-              Shop
-              <ChevronDownIcon
-                aria-hidden="true"
-                className="size-5 flex-none text-gray-400"
-              />
-            </PopoverButton>
+            {({ close }) => (
+              <>
+                <PopoverButton className="cursor-pointer flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900">
+                  Shop
+                  <ChevronDownIcon aria-hidden="true" className="size-5 flex-none text-gray-400" />
+                </PopoverButton>
 
-            <PopoverPanel
-              transition
-              className="absolute left-1/2 z-10 mt-3 w-screen max-w-md -translate-x-1/2 overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
-            >
-              <div className="p-4">
-                {categories.map((item) => (
-                  <div
-                    key={item.name}
-                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50"
-                  >
-                    <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                      <item.icon
-                        aria-hidden="true"
-                        className="size-6 text-gray-600 group-hover:text-indigo-600"
-                      />
+                <PopoverPanel
+                  transition
+                  className="absolute left-1/2 z-10 mt-3 w-screen max-w-md -translate-x-1/2 overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
+                  onMouseLeave={() => close()}
+                >
+                  <div className="p-4">
+                    <div className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50">
+                      <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                        <SquaresPlusIcon aria-hidden="true" className="size-6 text-gray-600 group-hover:text-indigo-600" />
+                      </div>
+                      <div className="flex-auto">
+                        <Link href="/shop/all-products" onClick={() => close()} className="block font-semibold text-gray-900">
+                          All Products
+                          <span className="absolute inset-0" />
+                        </Link>
+                        <p className="mt-1 text-gray-600">Browse everything in one place</p>
+                      </div>
                     </div>
-                    <div className="flex-auto">
-                      <a
-                        href={item.href}
-                        className="block font-semibold text-gray-900"
-                      >
-                        {item.name}
-                        <span className="absolute inset-0" />
-                      </a>
-                      <p className="mt-1 text-gray-600">{item.description}</p>
-                    </div>
+                    {categories.map((item) => (
+                      <div key={item.name} className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50">
+                        <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                          <item.icon aria-hidden="true" className="size-6 text-gray-600 group-hover:text-indigo-600" />
+                        </div>
+                        <div className="flex-auto">
+                          <Link href="/shop" onClick={() => close()} className="block font-semibold text-gray-900">
+                            {item.name}
+                            <span className="absolute inset-0" />
+                          </Link>
+                          <p className="mt-1 text-gray-600">{item.description}</p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </PopoverPanel>
+                </PopoverPanel>
+              </>
+            )}
           </Popover>
           <a href="#" className="text-sm/6 font-semibold text-gray-900">
             Our Story
@@ -200,7 +205,7 @@ export default function Example() {
           <a href="#" className="text-sm/6 font-semibold text-gray-900">
             Blog
           </a>
-          <a href="#" className="text-sm/6 font-semibold text-gray-900">
+          <a href="/contact" className="text-sm/6 font-semibold text-gray-900">
             Contact Us
           </a>
         </PopoverGroup>
